@@ -213,7 +213,7 @@ class _WebScreenLayoutState extends State<WebScreenLayout> {
                         ],
                       ),
                       const SizedBox(
-                        height: 20,
+                        height: 10,
                       ),
                     ],
                   ),
