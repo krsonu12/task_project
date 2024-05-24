@@ -1,5 +1,4 @@
-import 'dart:math';
-
+import 'package:http/http.dart' as http;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:task_project/widgets/app_button.dart';
@@ -16,19 +15,15 @@ class WebScreenLayout extends StatefulWidget {
 }
 
 class _WebScreenLayoutState extends State<WebScreenLayout> {
-  // final dio = Dio();
-
-  // void fetchUser() async {
-  //   try {
-  //     final response = await dio.get('http://172.19.0.1:3000/data');
-  //     print("--------$response");
-  //   } catch (e) {
-  //     print(e);
-  //   }
-  // }
+  Future api() async {
+    const url = 'http://localhost:3000/comments';
+    var response = await http.get(Uri.parse(url)); // here i passed http.get
+    print("@@@@@${response.body}"); // You should get your result
+  }
 
   @override
   void initState() {
+    api();
     super.initState();
   }
 
